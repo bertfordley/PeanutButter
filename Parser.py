@@ -111,7 +111,7 @@ def Parser(directory, inputFile, columns):
                         Desc = Desc +  ";" + p.text.partition(" ")[2].encode('utf-8')
                         
         for it in p.find_all('i'):
-            Species = it.text.encode('utf-8')
+            Hit_Species = it.text.encode('utf-8')
             break
         
         for li in p.next_sibling:
@@ -201,7 +201,7 @@ if __name__ == "__main__":
     "PubMed_ID", "PubMed_Link", "Keyword_Match", "More_Link", "Total_Hits",
     "Total_Hits_Listed", "Percent_Covered"]
       
-    topDir = "/Volumes/RMdata1A/PeanutButter20170711/output_html/media/y9x/XY8T02A/vip/PeanutButter_search/out" 
+    topDir = "/Users/rkd/Desktop/PeanutButter" 
 
 # Non-parallel
 #    for spDir in os.listdir(topDir):
@@ -225,7 +225,7 @@ if __name__ == "__main__":
 
     for spDir in os.listdir(topDir):
 #        if not spDir.startswith('.') and (spDir == "Kafe" or spDir == "Arth"):
-        if not spDir.startswith('.') and (spDir == "test3"):# or spDir == "test2"): 
+        if not spDir.startswith('.') and (spDir == "test1" or spDir == "test2"): 
             OUT = open(os.path.join(topDir, spDir + "_output.txt"), "w")
             OUT.close()
             head = False
